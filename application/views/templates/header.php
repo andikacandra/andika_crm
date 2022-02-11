@@ -1,6 +1,6 @@
 <!-- Preloader -->
 <div class="preloader flex-column justify-content-center align-items-center">
-    <img class="animation__shake" src="<?php echo base_url('resources/AdminLTE/dist/img/SmartLogo.png'); ?>" alt="AdminLTELogo" height="200" width="200">
+    <img class="animation__shake" src="<?php echo base_url('assets/dist/img/SmartLogo.png'); ?>" alt="AdminLTELogo" height="200" width="200">
 </div>
 
 <!-- Navbar -->
@@ -38,7 +38,7 @@
 <aside class="main-sidebar elevation-4 sidebar-light-lightblue">
     <!-- Brand Logo -->
     <a href="index3.html" class="brand-link bg-cyan">
-        <img src="<?php echo base_url('resources/AdminLTE/dist/img/SmartLogo.png'); ?>" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+        <img src="<?php echo base_url('assets/dist/img/SmartLogo.png'); ?>" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
         <span class="brand-text font-weight-light">CRM SMART</span>
     </a>
 

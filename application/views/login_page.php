@@ -7,13 +7,13 @@
     <title>PT. Smart | CRM Smart</title>
 
     <!-- Google Font: Source Sans Pro -->
-    <link rel="stylesheet" href="<?php echo base_url('resources/AdminLTE/plugins/fonts/fonts-google.css'); ?>">
+    <link rel="stylesheet" href="<?php echo base_url('assets/plugins/fonts/fonts-google.css'); ?>">
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="<?php echo base_url('resources/AdminLTE/plugins/fontawesome-free/css/all.min.css'); ?>">
+    <link rel="stylesheet" href="<?php echo base_url('assets/plugins/fontawesome-free/css/all.min.css'); ?>">
     <!-- icheck bootstrap -->
-    <link rel="stylesheet" href="<?php echo base_url('resources/AdminLTE/plugins/icheck-bootstrap/icheck-bootstrap.min.css'); ?>">
+    <link rel="stylesheet" href="<?php echo base_url('assets/plugins/icheck-bootstrap/icheck-bootstrap.min.css'); ?>">
     <!-- Theme style -->
-    <link rel="stylesheet" href="<?php echo base_url('resources/AdminLTE/dist/css/adminlte.min.css'); ?>">
+    <link rel="stylesheet" href="<?php echo base_url('assets/dist/css/adminlte.min.css'); ?>">
 </head>
 
 <body class="hold-transition login-page">
@@ -57,11 +57,11 @@
     </div>
 
     <!-- jQuery -->
-    <script src="<?php echo base_url('resources/AdminLTE/plugins/jquery/jquery.min.js'); ?>"></script>
+    <script src="<?php echo base_url('assets/plugins/jquery/jquery.min.js'); ?>"></script>
     <!-- Bootstrap 4 -->
-    <script src="<?php echo base_url('resources/AdminLTE/plugins/bootstrap/js/bootstrap.bundle.min.js'); ?>"></script>
+    <script src="<?php echo base_url('assets/plugins/bootstrap/js/bootstrap.bundle.min.js'); ?>"></script>
     <!-- AdminLTE App -->
-    <script src="<?php echo base_url('resources/AdminLTE/dist/js/adminlte.min.js'); ?>"></script>
+    <script src="<?php echo base_url('assets/dist/js/adminlte.min.js'); ?>"></script>
 </body>
 
 </html>
