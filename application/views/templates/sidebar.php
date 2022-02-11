@@ -4,6 +4,10 @@ $sidebar_menu = [
         'name' => 'Home',
         'icon' => 'nav-icon far fa-image',
         'link' => site_url('home'),
+    ], [
+        'name' => 'Products',
+        'icon' => 'nav-icon far fa-image',
+        'link' => site_url('products'),
     ]
 ];
 ?>
@@ -16,10 +20,7 @@ $sidebar_menu = [
             $sidebar_active = '';
             $actual_link = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
             foreach ($sidebar_menu as $row) {
-                $segments = $this->uri->segment_array();
-                $section = end($segments);
-
-                $sidebar_active = site_url($section) == $row['link'] ? 'active' : '';
+                $sidebar_active = site_url($this->session->userdata('sidebar_active')) == $row['link'] ? 'active' : '';
             ?>
 
                 <li class="nav-item">

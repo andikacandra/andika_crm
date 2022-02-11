@@ -5,6 +5,9 @@ class ProductsController extends CI_Controller
 {
     public function index()
     {
+        $segments = $this->uri->segment_array();
+        $this->session->set_userdata('sidebar_active', end($segments));
+
         $data['title']     = 'Products';
         $data['content']   = 'inventory/products/index';
         $data['my_js']     = 'inventory/products/index';

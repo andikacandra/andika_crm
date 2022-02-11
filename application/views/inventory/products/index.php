@@ -23,7 +23,7 @@
                             <tr>
                                 <td><?php echo $no++; ?></td>
                                 <td><?php echo $row['name']; ?></td>
-                                <td><?php echo $row['description']; ?></td>
+                                <td><?php echo nl2br($row['description']); ?></td>
                                 <td><?php echo 'Rp. ' . number_format($row['price'], 2, ',', '.'); ?></td>
                                 <td><?php echo ($row['status'] ? 'Active' : 'Non Active'); ?></td>
                                 <td>
