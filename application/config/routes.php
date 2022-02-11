@@ -7,7 +7,9 @@ $route['translate_uri_dashes'] = FALSE;
 
 
 // Auth
-$route['login'] = 'AuthController/index';
+$route['login']     = 'AuthController/index';
+$route['auth']      = 'AuthController/loginProcess';
+$route['logout']    = 'AuthController/logout';
 
 
 // CRM

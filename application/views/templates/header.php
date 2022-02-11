@@ -17,16 +17,16 @@
         <!-- Notifications Dropdown Menu -->
         <li class="nav-item dropdown">
             <a class="nav-link" data-toggle="dropdown" href="#">
-                <i class="far fa-user-circle"></i> Andika Candra Perdana
+                <i class="far fa-user-circle"></i> <?php echo $this->session->userdata('name'); ?>
             </a>
             <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-                <a href="#" class="dropdown-item">
+                <a href="<?php echo site_url('logout'); ?>" class="dropdown-item">
                     <i class="fas fa-sign-out-alt"></i> Logout
                 </a>
             </div>
         </li>
         <li class="nav-item">
-            <a class="nav-link" data-widget="fullscreen" href="#" role="button">
+            <a class="nav-link" data-widget="fullscreen" href="javascript:void(0)" role="button">
                 <i class="fas fa-expand-arrows-alt"></i>
             </a>
         </li>

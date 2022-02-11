@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>PT. Smart | CRM</title>
+    <title>PT. Smart | CRM Smart</title>
 
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet" href="<?php echo base_url('resources/AdminLTE/plugins/fonts/fonts-google.css'); ?>">
