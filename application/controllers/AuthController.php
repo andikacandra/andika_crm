@@ -25,7 +25,7 @@ class AuthController extends CI_Controller
                     ];
 
                     $this->session->set_userdata($data);
-                    // die();
+
                     redirect('home');
                 } else {
                     $this->session->set_flashdata('email_old', $email);

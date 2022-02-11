@@ -26,4 +26,9 @@ class DefaultModel extends CI_Model
     {
         $this->db->update($table, $data, $where);
     }
+
+    function delete($table, $where)
+    {
+        $this->db->delete($table, $where);
+    }
 }
