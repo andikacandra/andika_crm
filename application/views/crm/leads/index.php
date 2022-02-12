@@ -31,7 +31,9 @@
                                 <td>
                                     <a href="<?php echo site_url('crm/leads/' . $row['id']); ?>" class="btn btn-primary btn-sm">Detail</a>
                                     <a href="<?php echo site_url('crm/leads/edit/' . $row['id']); ?>" class="btn btn-info btn-sm">Edit</a>
-                                    <a href="<?php echo site_url('crm/leads/destroy/' . $row['id']); ?>" class="btn btn-danger btn-sm" onclick="if(!confirm('Delete this data ?')){return false;}">Delete</a>
+                                    <?php if ($this->session->userdata('role_id') == 1) { ?>
+                                        <a href="<?php echo site_url('crm/leads/destroy/' . $row['id']); ?>" class="btn btn-danger btn-sm" onclick="if(!confirm('Delete this data ?')){return false;}">Delete</a>
+                                    <?php } ?>
                                 </td>
                             </tr>
                         <?php } ?>

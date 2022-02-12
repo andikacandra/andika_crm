@@ -26,6 +26,7 @@ class AuthController extends CI_Controller
                         'is_login'  => true,
                         'user_id'   => $user['id'],
                         'name'      => $user['name'],
+                        'role_id'   => $user['id_role'],
                         'role'      => [$this->DefaultModel->getWhere('tbl_role', ['id' => $user['id_role']])->row()->access],
                     ];
 

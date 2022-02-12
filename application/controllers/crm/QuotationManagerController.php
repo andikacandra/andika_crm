@@ -47,6 +47,7 @@ class QuotationManagerController extends CI_Controller
             foreach ($child as $row) {
                 $data[] = [
                     'id'         => $row['id'],
+                    'approved_by' => $this->session->userdata('user_id'),
                     'deal_price' => $row['customer_price'],
                 ];
             }
