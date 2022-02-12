@@ -5,7 +5,11 @@ class AuthController extends CI_Controller
 {
     function index()
     {
-        $this->load->view('login_page');
+        if ($this->session->userdata('is_login') != true) {
+            $this->load->view('login_page');
+        } else {
+            redirect('home');
+        }
     }
 
     function loginProcess()
@@ -22,6 +26,7 @@ class AuthController extends CI_Controller
                         'is_login'  => true,
                         'user_id'   => $user['id'],
                         'name'      => $user['name'],
+                        'role'      => [$this->DefaultModel->getWhere('tbl_role', ['id' => $user['id_role']])->row()->access],
                     ];
 
                     $this->session->set_userdata($data);

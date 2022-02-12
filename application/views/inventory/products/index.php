@@ -6,7 +6,7 @@
     <div class="card">
         <div class="card-body">
             <div class="table-responsive">
-                <table id="example1" class="table table-bordered">
+                <table id="table1" class="table table-bordered">
                     <thead class="thead-light">
                         <tr>
                             <th>#</th>

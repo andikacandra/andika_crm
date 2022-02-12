@@ -1,3 +1,3 @@
 <div class="col-md-12">
-    Hi
+    <?php echo 'Hello ', $this->session->userdata('name'); ?>
 </div>

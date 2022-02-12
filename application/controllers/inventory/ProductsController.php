@@ -3,11 +3,22 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 class ProductsController extends CI_Controller
 {
-    public function index()
+    public function __construct()
     {
-        $segments = $this->uri->segment_array();
-        $this->session->set_userdata('sidebar_active', end($segments));
+        parent::__construct();
+        if ($this->session->userdata('is_login') != true) {
+            redirect('');
+        }
 
+        if (!in_array(6, explode(',', $this->session->userdata('role')[0]))) {
+            redirect('');
+        }
+
+        $this->session->set_userdata('sidebar_id', 6);
+    }
+
+    function index()
+    {
         $data['title']     = 'Products';
         $data['content']   = 'inventory/products/index';
         $data['my_js']     = 'inventory/products/index';
@@ -51,5 +62,10 @@ class ProductsController extends CI_Controller
     {
         $this->DefaultModel->delete('tbl_product', ['id' => $id]);
         redirect('products');
+    }
+
+    function getOne($id)
+    {
+        echo json_encode($this->DefaultModel->getWhere('tbl_product', ['id' => $id])->row_array());
     }
 }
