@@ -46,6 +46,12 @@
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script>
     var site_url = "<?php echo site_url(); ?>";
+    $(window).keydown(function(event) {
+        if (event.keyCode == 13) {
+            event.preventDefault();
+            return false;
+        }
+    });
 </script>
 
 <?php if (isset($my_js)) { ?>
