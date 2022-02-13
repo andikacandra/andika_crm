@@ -312,7 +312,7 @@ CREATE TABLE `tbl_role` (
 insert  into `tbl_role`(`id`,`name`,`access`) values 
 (1,'Administrator','1,2,3,4,5,6'),
 (2,'Manager Marketing','1,4,5'),
-(3,'Sales','1,2,3');
+(3,'Sales','1,2,3,6');
 
 /*Table structure for table `tbl_user` */
 
