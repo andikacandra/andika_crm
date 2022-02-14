@@ -63,9 +63,4 @@ class ProductsController extends CI_Controller
         $this->DefaultModel->delete('tbl_product', ['id' => $id]);
         redirect('products');
     }
-
-    function getOne($id)
-    {
-        echo json_encode($this->DefaultModel->getWhere('tbl_product', ['id' => $id])->row_array());
-    }
 }

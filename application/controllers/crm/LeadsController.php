@@ -28,7 +28,7 @@ class LeadsController extends CI_Controller
                 l.*, 
                 u.name AS lead_owner 
             FROM tbl_lead AS l
-            JOIN tbl_user AS u ON u.id = l.created_by
+            JOIN tbl_user AS u ON u.id = l.created_by " . ($this->session->userdata('role_id') != 1 ? 'AND u.id = ' . $this->session->userdata('user_id') : '') . "
         ");
 
         $this->load->view('templates/main', $data);
@@ -50,6 +50,10 @@ class LeadsController extends CI_Controller
                 JOIN tbl_user AS u ON u.id = l.created_by
                 WHERE l.id = $id
             ")->row_array();
+
+            if ($this->session->userdata('role_id') != 1 && $data['leads']['created_by'] != $this->session->userdata('user_id')) {
+                redirect('crm/leads');
+            }
         }
 
         $data['lead_status'] = $this->DefaultModel->get('tbl_lead_status');

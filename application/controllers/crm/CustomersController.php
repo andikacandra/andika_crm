@@ -21,6 +21,8 @@ class CustomersController extends CI_Controller
     {
         $data['title']     = 'Customers';
         $data['content']   = 'crm/customers/index';
+        $data['my_js']     = 'crm/customers/index';
+
 
         $data['customers'] = $this->DefaultModel->getQuery("
             SELECT

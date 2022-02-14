@@ -5,7 +5,7 @@ $(document).ready(function () {
 
         $.ajax({
             type: "GET",
-            url: site_url + "/products/one/" + id,
+            url: site_url + "/crm/quotation/one/" + id,
             dataType: "json",
             success: function (data) {
                 $('#quotation-line tbody').append("<tr>" +

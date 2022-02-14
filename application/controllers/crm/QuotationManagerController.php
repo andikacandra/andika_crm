@@ -21,7 +21,7 @@ class QuotationManagerController extends CI_Controller
     {
         $data['title']     = 'Quotation Letter Approval';
         $data['content']   = 'crm/quotation/approval_list';
-        // $data['my_js']     = 'crm/leads/index';
+        $data['my_js']     = 'crm/quotation/approval_list';
 
         $data['quotation'] = $this->DefaultModel->getQuery("
             SELECT 
@@ -37,7 +37,7 @@ class QuotationManagerController extends CI_Controller
 
     function save($id, $status)
     {
-        $this->DefaultModel->update('tbl_quotation_letter', ['status' => $status], ['id' => $id]);
+        $this->DefaultModel->update('tbl_quotation_letter', ['status' => $status, 'approved_by' => $this->session->userdata('user_id')], ['id' => $id]);
 
         if ($status == 1) {
             $child = $this->DefaultModel->getWhere('tbl_quotation_letter_line', ['parent_id' => $id])->result_array();
@@ -47,7 +47,6 @@ class QuotationManagerController extends CI_Controller
             foreach ($child as $row) {
                 $data[] = [
                     'id'         => $row['id'],
-                    'approved_by' => $this->session->userdata('user_id'),
                     'deal_price' => $row['customer_price'],
                 ];
             }

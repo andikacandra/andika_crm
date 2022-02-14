@@ -24,6 +24,7 @@ $route['crm/quotation']                 = 'crm/QuotationController/index';
 $route['crm/quotation/(:num)']          = 'crm/QuotationController/detail/$1';
 $route['crm/quotation/create/(:num)']   = 'crm/QuotationController/form/$1';
 $route['crm/quotation/save']            = 'crm/QuotationController/save';
+$route['crm/quotation/one/(:num)']      = 'crm/QuotationController/getOne/$1';
 
 // CRM - QuotationManager
 $route['crm/qapproval']                 = 'crm/QuotationManagerController/index';
@@ -43,4 +44,3 @@ $route['products/edit/(:num)']      = 'inventory/ProductsController/form/$1';
 $route['products/save']             = 'inventory/ProductsController/save';
 $route['products/save/(:num)']      = 'inventory/ProductsController/save/$1';
 $route['products/destroy/(:num)']   = 'inventory/ProductsController/delete/$1';
-$route['products/one/(:num)']       = 'inventory/ProductsController/getOne/$1';

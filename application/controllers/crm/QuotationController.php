@@ -21,14 +21,14 @@ class QuotationController extends CI_Controller
     {
         $data['title']     = 'Quotation Letter';
         $data['content']   = 'crm/quotation/index';
-        // $data['my_js']     = 'crm/leads/index';
+        $data['my_js']     = 'crm/quotation/index';
 
         $data['quotation'] = $this->DefaultModel->getQuery("
             SELECT 
                 ql.*,
                 l.name AS company 
             FROM tbl_quotation_letter AS ql
-            JOIN tbl_lead AS l ON l.id = ql.lead_id
+            JOIN tbl_lead AS l ON l.id = ql.lead_id " . ($this->session->userdata('role_id') != 1 ? 'AND l.created_by = ' . $this->session->userdata('user_id') : '') . "
         ");
 
         $this->load->view('templates/main', $data);
@@ -41,6 +41,11 @@ class QuotationController extends CI_Controller
         $data['my_js']      = 'crm/quotation/form';
 
         $data['leads']      = $this->DefaultModel->getWhere('tbl_lead', ['id' => $id])->row_array();
+
+        if ($this->session->userdata('role_id') != 1 && $data['leads']['created_by'] != $this->session->userdata('user_id')) {
+            redirect('crm/leads');
+        }
+
         $data['products']   = $this->DefaultModel->get('tbl_product');
 
         $data['lead_status'] = $this->DefaultModel->get('tbl_lead_status');
@@ -112,6 +117,11 @@ class QuotationController extends CI_Controller
             JOIN tbl_lead AS l ON l.id = ql.lead_id
             WHERE ql.id = $id
         ")->row_array();
+
+        if ($this->session->userdata('role_id') != 1 && $data['leads']['created_by'] != $this->session->userdata('user_id')) {
+            redirect('crm/quotation');
+        }
+
         $data['products']   = $this->DefaultModel->getWhere('tbl_quotation_letter_line', ['parent_id' => $id]);
 
         $data['lead_status'] = $this->DefaultModel->get('tbl_lead_status');
@@ -119,5 +129,10 @@ class QuotationController extends CI_Controller
         $data['company_type'] = $this->DefaultModel->get('tbl_company_type');
 
         $this->load->view('templates/main', $data);
+    }
+
+    function getOne($id)
+    {
+        echo json_encode($this->DefaultModel->getWhere('tbl_product', ['id' => $id])->row_array());
     }
 }
